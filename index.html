@@ -10,8 +10,41 @@
 <body>
     <h1>Athena</h1>
     <h2>Plan</h2>
-    <p></p>
-    <img src=plan.JPG alt="">
+    <h3>Why are we creating this Application?</h3>
+    <p>In a country like the US which has imbibed sports into its culture, it is a subject of opportunity to see why the sports pursuing population is a clear minority in comparison to the viewership community size. With the business of college/work schedules, it is clear to see dearth of play buddies, mismatching time schedules, unavailable play location, high training costs are the major barriers to converting 90% of non-playing viewership group into actually practicing their sports' interests. Our ultimate projects goal create a platform of talent sharing in sports. Our solution, Athena, is a location-based, analytics powered, learner-centric skill trading marketplace that successfully addresses all those barriers. We maximize the skill-share experience through learner personalization and trainer talent differentiation. Our premise lies in the fact that every student is a teacher and every teacher is a student. In creating this web application, we will create a platform that both connects the skilled and the interested to create a Global Peer-to-Peer collaborative learning ecosystem while also empowering all players to connect with and play competitive games with other players of similar skill. Martin and I will attempt to conserve the integrity of this underlying service goal when creating our web application. We hope to code it in such a way that the project is both industry ready while also writing it a way that supports a framework for an IOS application. We will be creating this application with React Native and if we have time, we will use this react native framework to create an ios application that also runs all of the backend functionality of the web application. This is, however, a reach goal.</p>
+    <p>We hope to take this web application beyond the classroom setting and develop it into a product that users can use on a regular basis in works hubs such as RTP and Google/Facebook campuses.</p>
+    <h3>Project/Coding Introduction</h3>
+    <p>We are creating a website that facilitates sports games between users. It will allow users to create time slots where they are available to play a certain sport (like tennis), specifying the date and location of the game. Other users may sign for this time slot, indicating that the game is full, in which the slot will be removed from the public board. When a user registers, they are given a questionnaire for a certain sport, which will determine an initial rating. This rating is used to match similarly skilled users for games. After a game is played, each user will receive a questionnaire asking about how the game went, which will affect each person's skill level, allowing for dynamic skill adjustments, so that games can be kept competitive. There will be a backend algorithm that adjusts user experience and user rating that takes factors such as frequency of game play, and questionnaire responses into consideration. A wire-frame design of the application is shown below.</p>
+    <img src=images/plan.JPG alt="">
+    <p>We hope to use React.js, a javascript framework that allows applications to run on both web and mobile services, and we are planning on storing data in Firebase, so that it can be accessed from any device at any time. Both of us are planning to use React in our explore projects to help us with this project.</p>
+    <p>We will have a login and authentication system that prevents user data from being leaked as well as a system that only allows people with college emails and office emails to sign in to create individual hubs. For example, Duke students will only be able to sign in with their Duke email, which will be authenticated, and then they will be paired up with Duke students in order to play in the application. We hope to make the application customer facing and intuitive. Data that this application may access are google map data (to specify locations), google calendar data for users, and possibly facebook data (sign in with facebook).</p>
+    <h3>Application Design</h3>
+    <p>We determined that there are 3 different types of Users:</p>
+    <ol>
+    <li>People who want to play the game.</li>
+    <li>Companies that want advertisement space/time</li>
+    <li>Organizations which manage location of courts/fields/arenas. (Ex: Duke Recreation, Indoor Tennis/Badminton/Squash/Basketball Courts, Parks that have closing times) </li>
+    </ol>
+    <p>We will having different authentication processes for each type of user that access the application. When the application is initialized, it will allow the user to sign in as an person/company/or organization.  The product that we are creating is for individuals and therefore, the entire UI will be tailored to make it as convenient as possible for the user.</p>
+    <p>There will be a splash screen with different types of users and authentication processes that are unique to each type of user. When the Guest accesses/logs into the site, the user can browse games/schedule games/schedule lessons/ and view Player and community information. The administrator, or the company will have access to edit the advertising of the application that they have control of. There will be “components” or locations within the web application  that the companies can edit. The company will “pay” and will be granted a timeslot to post their advertisement. They will also have the power to edit that advertisement whenever they feel necessary. For example, if adidas wants to advertise their sports equipment from 8:00pm - 8:00am everyday, they need to pay for the timeslot and choose an image to advertise. This is the only purpose that the company serves in the application and they will have a seperate authentication to gain access to this feature. The last type of user is an organization. The organizaton will be able to access google maps api to locate their sports facilities. Once they “register” a sports facility as a part of a community, these sports organzations will be responsible for providing data about when they are open and closed, as well as potential information about the availability of their facilities at certain times during the day. (This feature is yet to fully be discussed).</p>
+    <p>To work with a reasonable amount of data, your application should make use of a web service to provide data that can be updated dynamically rather than relying solely on users to input the data directly. You may scrape data from HTML pages or use program-generated "fake" datasets if real ones are too difficult to obtain but those results should be stored in separate data files (like JSON) so it is easier to switch to a live data source if it becomes available.</p>
+    <p>Likewise, make the data from your site available to others in JSON format so they do not need to scrape your web site.
+    We will scrape data from Google to find information about public facilities (tennis,squash,etc) available in a community as well as their location and timings that they are open.</p>
+    
+    <p>There will also be a ton of data stored within our web application:</p>
+        <ul>
+            <li>Previous Game Data (Games that are scheduled)</li>
+            <li>Information about Game Players </li>
+            <li>Information about Organizations and facilities related to each organization (locations of facilities)</li>
+            <li>Companies and advertisement time and images. </li>
+            <li>Json file containing all of the surveys and information regarding these survey answers. </li>
+            <li>Specific information about each player’s history of playing (how often they play, </li>
+            <li>Information about community (leaderboard of best players/best teachers/</li>
+            <li>Information about Game Coaches/ratings of coaches/ payment method imbedded into the application for coaches.  (use api that allows transactions to occur)</li>
+            <li>Storing all of the messages between players. Allow players to contact one another. (THIS FEATURE MIGHT NOT BE IMPLEMENTED) -- replaced with temporary contact information for the player.</li>
+        </ul>
+    <h3>Example Game Data</h3>
+    <img src=images/gameData.JPG alt="">
 </body>
 
 </html>
