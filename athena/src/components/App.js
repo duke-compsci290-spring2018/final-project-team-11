@@ -26,7 +26,9 @@ class App extends React.Component {
         super(props);
         this.state = {
             user: {name: null, id: null},
-            sport: ""
+            sport: "",
+            gameID: "",
+            surveySport: ""
         };
     }
 
@@ -42,6 +44,10 @@ class App extends React.Component {
     sportCallBack(sport) {
         console.log(sport);
         this.setState({sport: sport});
+    }
+
+    gameIDCallBack(gameID, surveySport) {
+        this.setState({gameID: gameID, surveySport: surveySport});
     }
 
     render() {
@@ -75,7 +81,7 @@ class App extends React.Component {
                     />
                     <Route
                         exact path={routes.ACCOUNT}
-                        component={() => <AccountPage userID={this.state.user.id}/>}
+                        component={() => <AccountPage userID={this.state.user.id} gameIDCallBack={this.gameIDCallBack.bind(this)}/>}
                     />
                     <Route
                         exact path={routes.CREATE_GAME}
@@ -91,7 +97,7 @@ class App extends React.Component {
                     />
                     <Route
                         exact path={routes.END_OF_GAME_SURVEY}
-                        component={() => <EndOfGameSurvey sport={this.state.sport} userID={this.state.user.id}/>}
+                        component={() => <EndOfGameSurvey surveySport={this.state.surveySport} userID={this.state.user.id}  gameID={this.state.gameID}/>}
                     />
                 </div>
             </Router>

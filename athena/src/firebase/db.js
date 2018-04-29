@@ -34,7 +34,7 @@ export const addGame = (userID, date, time, duration, sport, location, dateCreat
         });
         var gameID = game.key;
         db.ref(`games/${gameID}`).update({gameID: gameID});
-        db.ref(`games/${gameID}/participants/${userID}`).set(dateCreated);
+        db.ref(`games/${gameID}/participants/${userID}`).set('false');
         db.ref(`users/${userID}/games/${game.key}`).set(gameID);
         console.log("game added!")
     });
@@ -71,13 +71,13 @@ export const removeGame = (gameID) => {
 }
 
 export const joinGame = (gameID, userID, dateJoined) => {
-    db.ref(`games/${gameID}/participants/${userID}`).set(dateJoined);
+    db.ref(`games/${gameID}/participants/${userID}`).set('false');
     db.ref(`users/${userID}/games/${gameID}`).set(gameID);
 }
 
 export const leaveGame = (gameID, userID) => {
-    db.ref(`games/${gameID}/participants/${userID}`).remove();
-    /*db.ref(`games`).once('value').then(snap => {
+    //db.ref(`games/${gameID}/participants/${userID}`).remove();
+    db.ref(`games`).once('value').then(snap => {
         var games = snap.val();
         delete games[gameID].participants[userID];
         console.log(games[gameID].participants);
@@ -85,7 +85,7 @@ export const leaveGame = (gameID, userID) => {
             delete games[gameID];
         }
         db.ref("games").set(games);
-    })*/
+    });
 
     db.ref(`users/${userID}/games/${gameID}`).remove();
     console.log("game left!")
@@ -129,8 +129,14 @@ export const addToRating = (userID, sport, add) => {
     db.ref(`users/${userID}`).once('value').then(snap => {
         var user = snap.val();
         var rating = user.ratings[sport];
+        console.log(sport);
+        console.log(add);
         db.ref(`users/${userID}/ratings/${sport}`).set(rating+add);
     });
+}
+
+export const surveyTaken = (userID, gameID) => {
+    db.ref(`games/${gameID}/participants/${userID}`).set('true');
 }
 
 export const hasTakenSurvey = (userID, gameID) => {

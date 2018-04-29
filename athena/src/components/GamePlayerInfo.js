@@ -11,9 +11,9 @@ export default class AccountPage extends React.Component {
     render () {
         return (
             <div>
-                <h1>Account Page</h1>
+                <h1>My Games Page</h1>
                 <MuiThemeProvider>
-                    <UserGamesTable userID={this.props.userID}></UserGamesTable>
+                    <UserGamesTable userID={this.props.userID} gameIDCallBack={this.props.gameIDCallBack}></UserGamesTable>
                 </MuiThemeProvider>
             </div>
         )

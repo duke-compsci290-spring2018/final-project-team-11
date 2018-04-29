@@ -37,11 +37,9 @@ class SignInPage extends React.Component {
                     this.props.username
                         ? <SignInHome userID={this.props.userID} sportCallBack={this.props.sportCallBack} sport={this.props.sport} admin={this.props.admin}/>
                         : <div>
-                            <button onClick={() => this.startUI()}> sign in </button>
+                            <p>Open authorization/Enable credential input:  
+                            <button onClick={() => this.startUI()}> Sign In </button> </p>
                             <div id="firebaseui-auth">
-                            </div>
-                            <div>
-                                <p>KEEP CLICKING SIGN IN!! AUTHENTICATION PROCESS REQUIRES 6 CLICKS</p>
                             </div>
 
                         </div>

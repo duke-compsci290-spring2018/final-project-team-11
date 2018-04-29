@@ -17,7 +17,7 @@ export default class SignInHome extends React.Component {
         }
         return (
             <div>
-                <h1>Sign In Home Page</h1>
+                <h1>Choose Sport</h1>
                 <MuiThemeProvider>
                     <SportChooser userID={this.props.userID} sportCallBack={this.props.sportCallBack} sport={this.props.sport}></SportChooser>
                 </MuiThemeProvider>

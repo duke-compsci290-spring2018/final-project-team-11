@@ -9,8 +9,9 @@ import {
     TableRowColumn
 } from 'material-ui/Table';
 import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+import { Link } from 'react-router-dom';
 
-import { Redirect } from 'react-router'
 import * as routes from '../constants/routes';
 
 import { db } from '../firebase';
@@ -46,9 +47,7 @@ export default class UserGamesTable extends Component {
             height: '300px',
             userData: {},
             upcomingGames: [],
-            pastGames: [],
-            takeSurvey: false,
-            surveyGame: ''
+            pastGames: []
         };
 
 
@@ -125,10 +124,6 @@ export default class UserGamesTable extends Component {
         db.leaveGame(row.gameID, this.props.userID)
     }
 
-    surveyGame = (index, row) => {
-        this.setState({surveyGame: row.gameID, takeSurvey: true});
-    }
-
     dateSort = () => {
         this.setState({upcomingGames: SortGames.sortByDate(this.state.upcomingGames)});
     }
@@ -148,16 +143,13 @@ export default class UserGamesTable extends Component {
 
 
     render() {
-        if (this.state.takeSurvey) {
-            return (<Redirect to={routes.END_OF_GAME_SURVEY}/>);
-        }
         return (
             <div>
                 <button onClick={() => this.rDateSort()}> Date up </button>
                 <button onClick={() => this.dateSort()}> Date down </button>
                 <button onClick={() => this.sportSort()}> Sport </button>
                 <button onClick={() => this.fullSort()}> Fullness </button>
-                <h1>Upcoming Games</h1>
+                <h2>Upcoming Games</h2>
                 <Table
                     height={this.state.height}
                     fixedHeader={this.state.fixedHeader}
@@ -171,13 +163,14 @@ export default class UserGamesTable extends Component {
                         enableSelectAll={this.state.enableSelectAll}
                     >
                         <TableRow>
-                            <TableHeaderColumn>Sport</TableHeaderColumn>
-                            <TableHeaderColumn>Date</TableHeaderColumn>
-                            <TableHeaderColumn>Starting Time</TableHeaderColumn>
-                            <TableHeaderColumn>Duration</TableHeaderColumn>
-                            <TableHeaderColumn>Players Signed Up</TableHeaderColumn>
-                            <TableHeaderColumn>Spots Available</TableHeaderColumn>
-                            <TableHeaderColumn>Leave Games</TableHeaderColumn>
+                            <TableHeaderColumn  style={{color: '#000000'}}>Sport</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Date</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Location</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Starting Time</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Duration</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Players Signed Up</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Spots Available</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Leave Games</TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
                     <TableBody
@@ -190,6 +183,7 @@ export default class UserGamesTable extends Component {
                             <TableRow key={index}>
                                 <TableRowColumn>{row.sport}</TableRowColumn>
                                 <TableRowColumn>{row.date}</TableRowColumn>
+                                <TableRowColumn>{row.location}</TableRowColumn>
                                 <TableRowColumn>{row.time}</TableRowColumn>
                                 <TableRowColumn>{row.duration}</TableRowColumn>
                                 <TableRowColumn>{Object.keys(row.participants).length}</TableRowColumn>
@@ -203,12 +197,11 @@ export default class UserGamesTable extends Component {
                     >
                         <TableRow>
                             <TableRowColumn colSpan="3" style={{textAlign: 'center'}}>
-                                Super Footer
                             </TableRowColumn>
                         </TableRow>
                     </TableFooter>
                 </Table>
-                <h1>Past Games</h1>
+                <h2>Past Games</h2>
                 <Table
                     height={this.state.height}
                     fixedHeader={this.state.fixedHeader}
@@ -222,13 +215,10 @@ export default class UserGamesTable extends Component {
                         enableSelectAll={this.state.enableSelectAll}
                     >
                         <TableRow>
-                            <TableHeaderColumn>Sport</TableHeaderColumn>
-                            <TableHeaderColumn>Date</TableHeaderColumn>
-                            <TableHeaderColumn>Starting Time</TableHeaderColumn>
-                            <TableHeaderColumn>Duration</TableHeaderColumn>
-                            <TableHeaderColumn>Players Signed Up</TableHeaderColumn>
-                            <TableHeaderColumn>Spots Available</TableHeaderColumn>
-                            <TableHeaderColumn>Take Survey!</TableHeaderColumn>
+                            <TableHeaderColumn  style={{color: '#000000'}}>Sport</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Date</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Starting Time</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Take Survey!</TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
                     <TableBody
@@ -242,10 +232,9 @@ export default class UserGamesTable extends Component {
                                 <TableRowColumn>{row.sport}</TableRowColumn>
                                 <TableRowColumn>{row.date}</TableRowColumn>
                                 <TableRowColumn>{row.time}</TableRowColumn>
-                                <TableRowColumn>{row.duration}</TableRowColumn>
-                                <TableRowColumn>{Object.keys(row.participants).length}</TableRowColumn>
-                                <TableRowColumn>{row.numParticipants - Object.keys(row.participants).length}</TableRowColumn>
-                                <TableRowColumn><FlatButton onClick={() => this.surveyGame(index, row)} label="Survey"/></TableRowColumn>
+                                {(row.participants[this.props.userID] !== 'false')
+                                    ? <TableRowColumn><RaisedButton disabled={true}>Submitted</RaisedButton></TableRowColumn>
+                                    : <TableRowColumn><RaisedButton><Link  onClick={() => this.props.gameIDCallBack(row.gameID, row.sport)} style={{textDecoration: 'none'}}  to={routes.END_OF_GAME_SURVEY}>Survey</Link></RaisedButton></TableRowColumn>}
                             </TableRow>
                         ))}
                     </TableBody>
@@ -254,7 +243,6 @@ export default class UserGamesTable extends Component {
                     >
                         <TableRow>
                             <TableRowColumn colSpan="3" style={{textAlign: 'center'}}>
-                                Super Footer
                             </TableRowColumn>
                         </TableRow>
                     </TableFooter>

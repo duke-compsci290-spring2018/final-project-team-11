@@ -22,13 +22,13 @@ class SimpleSlider extends React.Component {
             <div id="slider" className="container">
                 <Slider {...settings}>
                     <div>
-                        <img src="http://sportia-eg.com/images/sinal.jpg" alt=""/>
+                        <img src="http://sportia-eg.com/images/sinal.jpg" alt="Squash" title="Source: http://sportia-eg.com/images/sinal.jpg"/>
                     </div>
                     <div>
-                        <img src="https://stillmed.olympic.org/media/Images/OlympicOrg/News/2017/05/03/tennis-thumbnail.jpg?interpolation=lanczos-none&resize=*:*" alt=""/>
+                        <img src="https://stillmed.olympic.org/media/Images/OlympicOrg/News/2017/05/03/tennis-thumbnail.jpg?interpolation=lanczos-none&resize=*:*" alt="Tennis" title="Source: https://stillmed.olympic.org/media/Images/OlympicOrg/News/2017/05/03/tennis-thumbnail.jpg?interpolation=lanczos-none&resize=*:*"/>
                     </div>
                     <div>
-                        <img src="https://wallpapercave.com/wp/wp1852937.jpg" alt=""/>
+                        <img src="https://wallpapercave.com/wp/wp1852937.jpg" alt="Badminton" title="Source: https://wallpapercave.com/wp/wp1852937.jpg"/>
                     </div>
                 </Slider>
             </div>

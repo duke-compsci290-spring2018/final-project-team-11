@@ -13,7 +13,7 @@ export default class InitialSportSurvey extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            experience: '',
+            experience: 0,
             frequency: '',
             submit: false
         };

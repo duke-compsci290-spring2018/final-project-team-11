@@ -28,7 +28,6 @@ export default class GameForm extends Component {
 
     handleInputChange(event) {
         const target = event.target;
-        console.log(event.target);
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
 
@@ -68,7 +67,8 @@ export default class GameForm extends Component {
                         name="numOfPlayers"
                         type="number"
                         checked={this.state.numOfPlayers}
-                        onChange={this.handleInputChange} required/>
+                        onChange={this.handleInputChange}
+                        min="2" step="1" required/>
                 </label>
 
                 <br />

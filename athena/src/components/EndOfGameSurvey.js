@@ -33,13 +33,17 @@ export default class EndOfGameSurvey extends Component {
 
     handleSubmit(event) {
         console.log(this.state);
-        var rating = parseInt(this.state.experience, 10) + parseInt(this.state.frequency, 10);
-        db.setRating(this.props.userID, this.props.sport, rating);
+        //var rating = parseInt(this.state.experience, 10) + parseInt(this.state.frequency, 10);
+        db.addToRating(this.props.userID, this.props.surveySport, parseInt(this.state.experience, 10));
+        db.surveyTaken(this.props.userID, this.props.gameID);
         this.setState({submit: true});
         event.preventDefault();
     }
 
     render() {
+        if (this.props.userID === null || this.props.gameID === '' || this.props.surveySport === '') {
+            return (<Redirect to={routes.HOME}/>);
+        }
         if (this.state.submit) {
             return (<Redirect to={routes.ACCOUNT}/>);
         }
@@ -47,9 +51,9 @@ export default class EndOfGameSurvey extends Component {
             <form onSubmit={this.handleSubmit}>
                 <br />
                 <label>
-                    We hope that you had fun playing with Athena. How was did your skill level compare to your opponents?
+                    We hope that you had fun playing {this.props.surveySport} with Athena. How was did your skill level compare to your opponents?
                     <br />
-                    <select name="experience" value={this.state.experience} onChange={this.handleInputChange}>
+                    <select name="experience" value={this.state.experience} onChange={this.handleInputChange} required>
                         <option value="1">Better</option>
                         <option value="0">(Equal)Competitive</option>
                         <option value="-1">Worse</option>

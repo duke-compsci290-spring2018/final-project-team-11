@@ -44,11 +44,6 @@ export default class TableExampleComplex extends Component {
             gameData: [],
             userData: {}
         };
-       
-
-        /*db.gamesRef.on("value", function (data) {
-            self.state.gameData = data.val();
-        });*/
 
     }
     
@@ -86,7 +81,7 @@ export default class TableExampleComplex extends Component {
     }
     
     componentWillUnmount() {
-        db.gamesRef.off();
+        db.ref.off();
     }
 
 
@@ -129,6 +124,8 @@ export default class TableExampleComplex extends Component {
     render() {
         return (
             <div>
+                <br/>
+                <p>Sort By: </p>
                 <button onClick={() => this.rDateSort()}> Date up </button>
                 <button onClick={() => this.dateSort()}> Date down </button>
                 <button onClick={() => this.sportSort()}> Sport </button>
@@ -148,19 +145,19 @@ export default class TableExampleComplex extends Component {
                     >
                         <TableRow>
                             <TableHeaderColumn colSpan="3" tooltip="Super Header" style={{textAlign: 'center'}}>
-                               This is Gouttham's hardcoded superheader.
                             </TableHeaderColumn>
                         </TableRow>
                         <TableRow>
-                            <TableHeaderColumn>Sport</TableHeaderColumn>
-                            <TableHeaderColumn>Date</TableHeaderColumn>
-                            <TableHeaderColumn>Starting Time</TableHeaderColumn>
-                            <TableHeaderColumn>Duration</TableHeaderColumn>
-                            <TableHeaderColumn>Players Signed Up</TableHeaderColumn>
-                            <TableHeaderColumn>Spots Available</TableHeaderColumn>
+                            <TableHeaderColumn  style={{color: '#000000'}}>Sport</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Date</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Location</TableHeaderColumn>   
+                            <TableHeaderColumn style={{color: '#000000'}}>Starting Time</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Duration</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Players Signed Up</TableHeaderColumn>
+                            <TableHeaderColumn style={{color: '#000000'}}>Spots Available</TableHeaderColumn>
                             {this.props.admin
-                                ? <TableHeaderColumn>Remove Games</TableHeaderColumn>
-                                : <TableHeaderColumn>Join Games</TableHeaderColumn>}
+                                ? <TableHeaderColumn  style={{color: '#000000'}}>Remove Games</TableHeaderColumn>
+                                : <TableHeaderColumn  style={{color: '#000000'}}>Join Games</TableHeaderColumn>}
                         </TableRow>
                     </TableHeader>
                     <TableBody
@@ -171,15 +168,16 @@ export default class TableExampleComplex extends Component {
                     >
                         {this.state.gameData.map( (row, index) => (
                             <TableRow key={index}>
-                                <TableRowColumn>{row.sport}</TableRowColumn>
-                                <TableRowColumn>{row.date}</TableRowColumn>
-                                <TableRowColumn>{row.time}</TableRowColumn>
-                                <TableRowColumn>{row.duration}</TableRowColumn>
-                                <TableRowColumn>{Object.keys(row.participants).length}</TableRowColumn>
-                                <TableRowColumn>{row.numParticipants - Object.keys(row.participants).length}</TableRowColumn>
+                                <TableRowColumn style={{color: '#000000'}}>{row.sport}</TableRowColumn>
+                                <TableRowColumn style={{color: '#000000'}}>{row.date}</TableRowColumn>
+                                <TableRowColumn style={{color: '#000000'}}>{row.location}</TableRowColumn>
+                                <TableRowColumn style={{color: '#000000'}}>{row.time}</TableRowColumn>
+                                <TableRowColumn style={{color: '#000000'}}>{row.duration}</TableRowColumn>
+                                <TableRowColumn style={{color: '#000000'}}>{Object.keys(row.participants).length}</TableRowColumn>
+                                <TableRowColumn style={{color: '#000000'}}>{row.numParticipants - Object.keys(row.participants).length}</TableRowColumn>
                                 {this.props.admin
-                                    ? <TableRowColumn><FlatButton onClick={() => this.removeGame(index, row)} label="Remove Game" disabled={this.props.userID === null}/></TableRowColumn>
-                                    : <TableRowColumn><FlatButton onClick={() => this.addUserToGame(index, row)} label="Join Game!" disabled={this.props.userID === null}/></TableRowColumn>}
+                                    ? <TableRowColumn  style={{color: '#000000'}}><FlatButton onClick={() => this.removeGame(index, row)} label="Remove Game" disabled={this.props.userID === null}/></TableRowColumn>
+                                    : <TableRowColumn  style={{color: '#000000'}}><FlatButton onClick={() => this.addUserToGame(index, row)} label="Join Game!" disabled={this.props.userID === null}/></TableRowColumn>}
                             </TableRow>
                         ))}
                     </TableBody>
@@ -188,7 +186,6 @@ export default class TableExampleComplex extends Component {
                     >
                         <TableRow>
                             <TableRowColumn colSpan="3" style={{textAlign: 'center'}}>
-                                Super Footer
                             </TableRowColumn>
                         </TableRow>
                     </TableFooter>

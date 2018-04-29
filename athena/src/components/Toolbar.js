@@ -33,7 +33,7 @@ class ToolbarBeforeSignIn extends React.Component {
             <div>
                 <Toolbar style={{backgroundColor: '#1E88E5'}}>
                     <ToolbarGroup>
-                        <ToolbarTitle text="ATHENA" />
+                        <ToolbarTitle text="ATHENA" style={{color: '#000000'}}/>
                         <RaisedButton><Link style={{textDecoration: 'none'}}  to={routes.SIGN_IN}>Sign In</Link></RaisedButton>
                         <RaisedButton><Link style={{textDecoration: 'none'}}  to={routes.GAME_SIGN_UP}>Games</Link></RaisedButton>
                         <RaisedButton><Link style={{textDecoration: 'none'}}  to={routes.HOME}>Home</Link></RaisedButton>
@@ -53,7 +53,7 @@ class ToolbarAfterSignIn extends React.Component {
             <div>
                 <Toolbar style={{backgroundColor: '#1E88E5'}}>
                     <ToolbarGroup>
-                        <ToolbarTitle text="ATHENA" />
+                        <ToolbarTitle text="ATHENA" style={{color: '#000000'}}/>
                         <ToolbarSeparator />
                         {this.props.admin
                             ? <RaisedButton><Link style={{textDecoration: 'none'}}  to={routes.GAME_SIGN_UP}>Manage Games</Link></RaisedButton>

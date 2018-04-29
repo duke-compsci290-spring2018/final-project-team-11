@@ -29,6 +29,10 @@ export default class SportChooser extends React.Component {
             self.setState({playerInfo: info});
         });
     }
+    
+    componentWillUnmount() {
+        db.usersRef.off();
+    }
 
     doSport(sport, rating) {
         this.props.sportCallBack(sport);
@@ -86,7 +90,7 @@ export default class SportChooser extends React.Component {
                                 </CardActions>
                             }
                         >
-                            <img style={{height: '175px'}} src="http://sportia-eg.com/images/sinal.jpg" alt="" />
+                            <img style={{height: '175px'}} src="https://sportia-eg.com/images/sinal.jpg" alt="" />
                         </CardMedia>
                     </Card>
                 </Card>
