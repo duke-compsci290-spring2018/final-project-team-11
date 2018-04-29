@@ -46,7 +46,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <div>
                     <Navigation username={this.state.user.name} signOut={this.signOutCallBack.bind(this)} admin={this.state.user.name === 'ADMIN'}/>
                     <hr/>
