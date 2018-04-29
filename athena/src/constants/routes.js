@@ -1,0 +1,10 @@
+export const SIGN_UP = '/signup';
+export const SIGN_IN = '/signin';
+export const SIGN_OUT = '/signout';
+export const HOME = '/';
+export const ACCOUNT = '/account';
+export const GAME_SIGN_UP = '/game-sign-up';
+export const CREATE_GAME = '/create-game';
+export const SIGN_IN_HOME = '/sign-in-home';
+export const INITIAL_SPORT_SURVEY = '/initial-sport-survey';
+export const END_OF_GAME_SURVEY = '/end-of-game-survey';
