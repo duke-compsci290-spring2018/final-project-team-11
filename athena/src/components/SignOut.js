@@ -1,9 +1,8 @@
 import React from 'react';
-import { auth, db } from '../firebase';
+import { auth } from '../firebase';
 
 class SignOutPage extends React.Component {
     componentDidMount() {
-    var self = this;
     //auth.auth.signOut();
     auth.signOut();
     }

@@ -12,7 +12,7 @@ export default class NewGame extends React.Component {
         return (
             <div>
                 <h1>Create Game</h1>
-                <GameForm userID={this.props.userID} sport={this.props.sport}></GameForm>
+                <GameForm userID={this.props.userID} sport={this.props.sport} admin={this.props.admin}></GameForm>
             </div>
         )
     }

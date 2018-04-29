@@ -1,11 +1,10 @@
 import React from 'react';
 import { auth, db } from '../firebase';
-import * as routes from '../constants/routes';
 import SignInHome from "./SignInHome";
 class SignInPage extends React.Component {
-    constructor(props) {
+    /*constructor(props) {
         super(props);
-    }
+    }*/
     startUI() {
     var self = this;
     var uiConfig = {
@@ -36,7 +35,7 @@ class SignInPage extends React.Component {
             <div>
                 {
                     this.props.username
-                        ? <SignInHome userID={this.props.userID} sportCallBack={this.props.sportCallBack} sport={this.props.sport}/>
+                        ? <SignInHome userID={this.props.userID} sportCallBack={this.props.sportCallBack} sport={this.props.sport} admin={this.props.admin}/>
                         : <div>
                             <button onClick={() => this.startUI()}> sign in </button>
                             <div id="firebaseui-auth">

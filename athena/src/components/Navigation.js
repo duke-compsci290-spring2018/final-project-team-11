@@ -18,7 +18,7 @@ export default class Navigation extends React.Component {
             <div>
 
                 <MuiThemeProvider>
-                    <Toolbar username={this.props.username} signOut={this.props.signOut}/>
+                    <Toolbar username={this.props.username} signOut={this.props.signOut} admin={this.props.admin}/>
                 </MuiThemeProvider>
             </div>
         );

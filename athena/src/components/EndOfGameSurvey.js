@@ -33,7 +33,7 @@ export default class EndOfGameSurvey extends Component {
 
     handleSubmit(event) {
         console.log(this.state);
-        var rating = parseInt(this.state.experience) + parseInt(this.state.frequency);
+        var rating = parseInt(this.state.experience, 10) + parseInt(this.state.frequency, 10);
         db.setRating(this.props.userID, this.props.sport, rating);
         this.setState({submit: true});
         event.preventDefault();

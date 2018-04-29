@@ -9,13 +9,11 @@ import {
     TableRowColumn
 } from 'material-ui/Table';
 import FlatButton from 'material-ui/FlatButton';
-import TextField from 'material-ui/TextField';
-import Toggle from 'material-ui/Toggle';
 import * as SortGames from '../constants/SortGames';
 
 import { db } from '../firebase';
 
-const styles = {
+/*const styles = {
     propContainer: {
         width: 200,
         overflow: 'hidden',
@@ -24,7 +22,7 @@ const styles = {
     propToggleHeader: {
         margin: '20px auto 10px',
     },
-};
+};*/
 
 /**
  * A more complex example, allowing the table height to be set, and key boolean properties to be toggled.
@@ -57,14 +55,19 @@ export default class TableExampleComplex extends Component {
     componentDidMount() {
         var self = this;
         db.ref.on("value", function (snap) {
-
             var data = snap.val();
             var games = data.games;
             for (var game in games) {
                 /*console.log(games[game].participants);
                 console.log(Object.keys(games[game].participants));
                 console.log(Object.keys(games[game].participants).length);*/
-                if (self.props.userID !== null) {
+                
+                if (self.props.admin) {
+                    if (games[game].participants === undefined || games[game].numParticipants <= Object.keys(games[game].participants).length || games[game].participants[self.props.userID] !== undefined) {
+                        delete games[game];
+                    }
+                }
+                else if (self.props.userID !== null) {
                     var rating = data.users[self.props.userID].ratings[self.props.sport];
                     if (Math.abs(rating - games[game].rating) > 3 || games[game].participants === undefined || games[game].sport !== self.props.sport || games[game].numParticipants <= Object.keys(games[game].participants).length || games[game].participants[self.props.userID] !== undefined) {
                         delete games[game];
@@ -98,9 +101,11 @@ export default class TableExampleComplex extends Component {
     };
 
     addUserToGame = (index, row) => {
-        console.log(this.props.userID);
-        console.log(this.props.sport);
         db.joinGame(row.gameID, this.props.userID, 'false')
+    }
+    
+    removeGame = (index, row) => {
+        db.removeGame(row.gameID);
     }
 
     dateSort = () => {
@@ -153,7 +158,9 @@ export default class TableExampleComplex extends Component {
                             <TableHeaderColumn>Duration</TableHeaderColumn>
                             <TableHeaderColumn>Players Signed Up</TableHeaderColumn>
                             <TableHeaderColumn>Spots Available</TableHeaderColumn>
-                            <TableHeaderColumn>Leave Games</TableHeaderColumn>
+                            {this.props.admin
+                                ? <TableHeaderColumn>Remove Games</TableHeaderColumn>
+                                : <TableHeaderColumn>Join Games</TableHeaderColumn>}
                         </TableRow>
                     </TableHeader>
                     <TableBody
@@ -170,7 +177,9 @@ export default class TableExampleComplex extends Component {
                                 <TableRowColumn>{row.duration}</TableRowColumn>
                                 <TableRowColumn>{Object.keys(row.participants).length}</TableRowColumn>
                                 <TableRowColumn>{row.numParticipants - Object.keys(row.participants).length}</TableRowColumn>
-                                <TableRowColumn><FlatButton onClick={() => this.addUserToGame(index, row)} label="Join Game!" disabled={this.props.userID === null}/></TableRowColumn>
+                                {this.props.admin
+                                    ? <TableRowColumn><FlatButton onClick={() => this.removeGame(index, row)} label="Remove Game" disabled={this.props.userID === null}/></TableRowColumn>
+                                    : <TableRowColumn><FlatButton onClick={() => this.addUserToGame(index, row)} label="Join Game!" disabled={this.props.userID === null}/></TableRowColumn>}
                             </TableRow>
                         ))}
                     </TableBody>

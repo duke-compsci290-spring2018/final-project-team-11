@@ -4,11 +4,19 @@ import {
 
 // User API
 
-export const createUser = (id, username, email) =>
+export const createUser = (id, username, email) => {
     db.ref(`users/${id}`).update({
         username,
         email,
     });
+    db.ref(`users/${id}`).once('value').then( snap => {
+        var user = snap.val();
+        if (user.type === undefined) {
+            user.type = "consumer";
+        }
+        db.ref(`users/${id}`).set(user);
+    }); 
+}
 
 export const addGame = (userID, date, time, duration, sport, location, dateCreated, numParticipants) => {
     db.ref(`users/${userID}/ratings/${sport}`).once('value').then(snap => {
@@ -115,6 +123,14 @@ export const getRating = (userID, sport) => {
 
 export const setRating = (userID, sport, rating) => {
     db.ref(`users/${userID}/ratings/${sport}`).set(rating);
+}
+
+export const addToRating = (userID, sport, add) => {
+    db.ref(`users/${userID}`).once('value').then(snap => {
+        var user = snap.val();
+        var rating = user.ratings[sport];
+        db.ref(`users/${userID}/ratings/${sport}`).set(rating+add);
+    });
 }
 
 export const hasTakenSurvey = (userID, gameID) => {

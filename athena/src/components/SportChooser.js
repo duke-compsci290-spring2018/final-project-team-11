@@ -1,13 +1,9 @@
 import React from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import {Card, CardActions, CardMedia} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
-import { BrowserRouter } from 'react-router-dom';
 import { db } from '../firebase'
-import InitialSportSurvey from './InitialSurvey.js'
 import { Redirect } from 'react-router'
 import * as routes from '../constants/routes';
-import * as SortGames from "../constants/SortGames";
 import { Link } from 'react-router-dom';
 
 
@@ -38,13 +34,11 @@ export default class SportChooser extends React.Component {
         this.props.sportCallBack(sport);
         console.log(sport);
         this.setState({sport: sport});
-        <Redirect to={routes.GAME_SIGN_UP}/>
+        //<Redirect to={routes.GAME_SIGN_UP}/>
     }
 
 
     render() {
-        console.log(this.props.sport);
-        console.log(this.state.playerInfo);
         if (this.props.sport !== '' && (this.state.playerInfo === undefined)) {
             return (<Redirect to={routes.INITIAL_SPORT_SURVEY}/>);
         }

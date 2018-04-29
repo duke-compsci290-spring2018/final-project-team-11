@@ -5,9 +5,9 @@ import UserGamesTable from "./UserGamesTable";
 
 
 export default class AccountPage extends React.Component {
-    constructor (props) {
+    /*constructor (props) {
         super(props)
-    };
+    };*/
     render () {
         return (
             <div>

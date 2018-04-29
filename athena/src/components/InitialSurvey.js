@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { db } from '../firebase';
 import * as routes from "../constants/routes";
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardText} from 'material-ui/Card';
 import { Redirect } from 'react-router'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -35,7 +35,7 @@ export default class InitialSportSurvey extends Component {
 
     handleSubmit(event) {
         console.log(this.state);
-        var rating = parseInt(this.state.experience) + parseInt(this.state.frequency);
+        var rating = parseInt(this.state.experience, 10) + parseInt(this.state.frequency, 10);
         db.setRating(this.props.userID, this.props.sport, rating);
         this.setState({submit: true});
         event.preventDefault();

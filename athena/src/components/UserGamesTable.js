@@ -9,13 +9,14 @@ import {
     TableRowColumn
 } from 'material-ui/Table';
 import FlatButton from 'material-ui/FlatButton';
-import TextField from 'material-ui/TextField';
-import Toggle from 'material-ui/Toggle';
+
+import { Redirect } from 'react-router'
+import * as routes from '../constants/routes';
 
 import { db } from '../firebase';
 import * as SortGames from "../constants/SortGames";
 
-const styles = {
+/*const styles = {
     propContainer: {
         width: 200,
         overflow: 'hidden',
@@ -24,7 +25,7 @@ const styles = {
     propToggleHeader: {
         margin: '20px auto 10px',
     },
-};
+};*/
 
 /**
  * A more complex example, allowing the table height to be set, and key boolean properties to be toggled.
@@ -45,7 +46,9 @@ export default class UserGamesTable extends Component {
             height: '300px',
             userData: {},
             upcomingGames: [],
-            pastGames: []
+            pastGames: [],
+            takeSurvey: false,
+            surveyGame: ''
         };
 
 
@@ -86,12 +89,14 @@ export default class UserGamesTable extends Component {
                 var userGames = Object.values(data.users[self.props.userID].games);
                 for (var userGame of userGames) {
                     var game = data.games[userGame];
-                    var date = new Date(game.date + " " + game.time);
-                    if (date.getTime() > now.getTime()) {
-                        upcomingGames.push(game);
-                    }
-                    else {
-                        pastGames.push(game);
+                    if (game !== undefined) {
+                        var date = new Date(game.date + " " + game.time);
+                        if (date.getTime() > now.getTime()) {
+                            upcomingGames.push(game);
+                        }
+                        else {
+                            pastGames.push(game);
+                        }
                     }
                 }
                 upcomingGames = SortGames.reverseSortByDate(Object.values(upcomingGames));
@@ -121,7 +126,7 @@ export default class UserGamesTable extends Component {
     }
 
     surveyGame = (index, row) => {
-
+        this.setState({surveyGame: row.gameID, takeSurvey: true});
     }
 
     dateSort = () => {
@@ -143,6 +148,9 @@ export default class UserGamesTable extends Component {
 
 
     render() {
+        if (this.state.takeSurvey) {
+            return (<Redirect to={routes.END_OF_GAME_SURVEY}/>);
+        }
         return (
             <div>
                 <button onClick={() => this.rDateSort()}> Date up </button>

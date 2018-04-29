@@ -17,11 +17,9 @@ import EndOfGameSurvey from './EndOfGameSurvey'
 
 
 import * as routes from '../constants/routes';
-import {auth} from '../firebase'
 
 import './App.css';
 
-import {db} from '../firebase';
 
 class App extends React.Component {
     constructor(props) {
@@ -50,9 +48,8 @@ class App extends React.Component {
         return (
             <Router>
                 <div>
-                    <Navigation username={this.state.user.name} signOut={this.signOutCallBack.bind(this)}/>
+                    <Navigation username={this.state.user.name} signOut={this.signOutCallBack.bind(this)} admin={this.state.user.name === 'ADMIN'}/>
                     <hr/>
-                    <p>{this.state.user.name}</p>
                     <Route
                         exact path={routes.HOME}
                         component={() => <Home username={this.state.user.name}/>}
@@ -63,7 +60,8 @@ class App extends React.Component {
                                                      callBack={this.signInCallBack.bind(this)}
                                                      userID={this.state.user.id}
                                                      sportCallBack={this.sportCallBack.bind(this)}
-                                                     sport={this.state.sport}/>}
+                                                     sport={this.state.sport}
+                                                     admin={this.state.user.name === 'ADMIN'}/>}
                     />
                     <Route
                         exact path={routes.SIGN_OUT}
@@ -72,7 +70,8 @@ class App extends React.Component {
                     <Route
                         exact path={routes.GAME_SIGN_UP}
                         component={() => <GameSignUp userID={this.state.user.id}
-                                                     sport={this.state.sport}/>}
+                                                     sport={this.state.sport}
+                                                     admin={this.state.user.name === 'ADMIN'}/>}
                     />
                     <Route
                         exact path={routes.ACCOUNT}
@@ -80,7 +79,7 @@ class App extends React.Component {
                     />
                     <Route
                         exact path={routes.CREATE_GAME}
-                        component={() => <NewGame userID={this.state.user.id} sport={this.state.sport}/>}
+                        component={() => <NewGame userID={this.state.user.id} sport={this.state.sport} admin={this.state.user.name === 'ADMIN'}/>}
                     />
                     <Route
                         exact path={routes.SIGN_IN_HOME}

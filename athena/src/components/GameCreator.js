@@ -18,6 +18,7 @@ export default class GameForm extends Component {
             date: '',
             timeStart: '',
             duration: '',
+            location: '',
             submit: false
         };
 
@@ -38,7 +39,7 @@ export default class GameForm extends Component {
 
     handleSubmit(event) {
          var d = new Date()
-         db.addGame(this.props.userID, this.state.date, this.state.timeStart, this.state.duration, this.props.sport, 'Durham', d.getTime(), parseInt(this.state.numOfPlayers))
+         db.addGame(this.props.userID, this.state.date, this.state.timeStart, this.state.duration, this.props.sport, this.state.location, d.getTime(), parseInt(this.state.numOfPlayers, 10))
          event.preventDefault();
          this.setState({submit: true});
     }
@@ -47,6 +48,13 @@ export default class GameForm extends Component {
         if (this.state.submit) {
             return (<Redirect to={routes.GAME_SIGN_UP}/>);
         }
+        if (this.props.userID === null) {
+            return <p>Sign in to create games!</p>
+        }
+        else if (this.props.admin) {
+            return <p>Admin accounts may not create games!</p>
+        }
+        else {
         return (
             <form onSubmit={this.handleSubmit}>
                 <MuiThemeProvider>
@@ -76,12 +84,17 @@ export default class GameForm extends Component {
                 <br />
                 <label>
                     Duration
-                    <input name="duration" checked={this.state.duration} onChange={this.handleInputChange} type="number" required/>
+                    <input type="number" name="duration" checked={this.state.duration} onChange={this.handleInputChange} min="1" step=".5" required/>
+                </label>
+                <br />
+                <label>
+                    Location
+                    <input name="location" checked={this.state.location} onChange={this.handleInputChange} required/>
                 </label>
                 <br />
                 <input type="submit" value="Submit"/>
             </form>
-        );
+        );}
     }
 
 }
