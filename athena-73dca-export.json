@@ -1,0 +1,481 @@
+{
+  "games" : {
+    "-LB9GwMHu2S6xPSQBHYC" : {
+      "date" : "2018-04-30",
+      "dateCreated" : 1524885865973,
+      "duration" : "2",
+      "gameID" : "-LB9GwMHu2S6xPSQBHYC",
+      "location" : "Durham",
+      "numParticipants" : 3,
+      "owner" : "MartinGouttham",
+      "participants" : {
+        "rXshDS35S3QEnwUDBKAQq36rOBL2" : "false"
+      },
+      "rating" : 14,
+      "sport" : "Tennis",
+      "time" : "08:08"
+    },
+    "-LB9JBH50MBM1Vp293Hl" : {
+      "date" : "2003-01-01",
+      "dateCreated" : 1524886455460,
+      "duration" : "1.5",
+      "gameID" : "-LB9JBH50MBM1Vp293Hl",
+      "location" : "Durham",
+      "numParticipants" : 5,
+      "owner" : "MartinGouttham2",
+      "participants" : {
+        "rXshDS35S3QEnwUDBKAQq36rOBL2" : "false"
+      },
+      "rating" : 14,
+      "sport" : "Tennis",
+      "time" : "13:00"
+    },
+    "-LBFBWOYnBVwp7zhsTOy" : {
+      "date" : "2018-04-03",
+      "dateCreated" : 1524985108104,
+      "duration" : "15",
+      "gameID" : "-LBFBWOYnBVwp7zhsTOy",
+      "location" : "Durham",
+      "numParticipants" : 10,
+      "owner" : "rXshDS35S3QEnwUDBKAQq36rOBL2",
+      "participants" : {
+        "rXshDS35S3QEnwUDBKAQq36rOBL2" : "false",
+        "rYnfTemLYhhNQZAnoJnaWDVKsN93" : "false"
+      },
+      "sport" : "Squash",
+      "time" : "03:31"
+    },
+    "-LBHrcy3YcHZ5S6N0ce0" : {
+      "date" : "2018-04-30",
+      "dateCreated" : 1525029964200,
+      "duration" : "2",
+      "gameID" : "-LBHrcy3YcHZ5S6N0ce0",
+      "location" : "Anywhere",
+      "numParticipants" : 2,
+      "owner" : "uXmyjoTT1obpLaEf0XPZcVnOeV02",
+      "participants" : {
+        "kFTTrJb8bJcTUduhviknpnopB8A2" : "false",
+        "uXmyjoTT1obpLaEf0XPZcVnOeV02" : "false"
+      },
+      "rating" : 6,
+      "sport" : "Tennis",
+      "time" : "08:08"
+    },
+    "-LBHxqLwYqbNxApJy_aB" : {
+      "date" : "2018-05-02",
+      "dateCreated" : 1525031591857,
+      "duration" : "1.5",
+      "gameID" : "-LBHxqLwYqbNxApJy_aB",
+      "location" : "Here",
+      "numParticipants" : 4,
+      "owner" : "uXmyjoTT1obpLaEf0XPZcVnOeV02",
+      "participants" : {
+        "9tH9cby4HHNrWd7HabIcYQGGIKE3" : "false",
+        "rYnfTemLYhhNQZAnoJnaWDVKsN93" : "false",
+        "uXmyjoTT1obpLaEf0XPZcVnOeV02" : "false"
+      },
+      "rating" : 4,
+      "sport" : "Badminton",
+      "time" : "16:30"
+    },
+    "-LBIHZd612NEny5U36J5" : {
+      "date" : "2018-05-01",
+      "dateCreated" : 1525037024243,
+      "duration" : "2",
+      "gameID" : "-LBIHZd612NEny5U36J5",
+      "location" : "Wilson",
+      "numParticipants" : 4,
+      "owner" : "uXmyjoTT1obpLaEf0XPZcVnOeV02",
+      "participants" : {
+        "rYnfTemLYhhNQZAnoJnaWDVKsN93" : "false",
+        "uXmyjoTT1obpLaEf0XPZcVnOeV02" : "false"
+      },
+      "rating" : 4,
+      "sport" : "Badminton",
+      "time" : "14:45"
+    },
+    "-LBIJInNe3VwOq8LHx4e" : {
+      "date" : "2018-04-18",
+      "dateCreated" : 1525037479635,
+      "duration" : "2",
+      "gameID" : "-LBIJInNe3VwOq8LHx4e",
+      "location" : "Here",
+      "numParticipants" : 4,
+      "owner" : "uXmyjoTT1obpLaEf0XPZcVnOeV02",
+      "participants" : {
+        "uXmyjoTT1obpLaEf0XPZcVnOeV02" : "true"
+      },
+      "rating" : 4,
+      "sport" : "Badminton",
+      "time" : "06:06"
+    },
+    "-LBIOvTwba3FaUxSXwyl" : {
+      "date" : "2018-04-10",
+      "dateCreated" : 1525038952773,
+      "duration" : "2",
+      "gameID" : "-LBIOvTwba3FaUxSXwyl",
+      "location" : "Here",
+      "numParticipants" : 2,
+      "owner" : "uXmyjoTT1obpLaEf0XPZcVnOeV02",
+      "participants" : {
+        "kFTTrJb8bJcTUduhviknpnopB8A2" : "false",
+        "uXmyjoTT1obpLaEf0XPZcVnOeV02" : "true"
+      },
+      "rating" : 6,
+      "sport" : "Tennis",
+      "time" : "08:30"
+    },
+    "-LBIZXAuyv8IQ2vfzGBq" : {
+      "date" : "2018-04-03",
+      "dateCreated" : 1525041732662,
+      "duration" : "2",
+      "gameID" : "-LBIZXAuyv8IQ2vfzGBq",
+      "location" : "Gym",
+      "numParticipants" : 2,
+      "owner" : "uXmyjoTT1obpLaEf0XPZcVnOeV02",
+      "participants" : {
+        "rYnfTemLYhhNQZAnoJnaWDVKsN93" : "true",
+        "uXmyjoTT1obpLaEf0XPZcVnOeV02" : "true"
+      },
+      "rating" : 3,
+      "sport" : "Badminton",
+      "time" : "14:30"
+    },
+    "-LBI_fCI34R9huUvIsYw" : {
+      "date" : "2018-05-08",
+      "dateCreated" : 1525042031784,
+      "duration" : "2",
+      "gameID" : "-LBI_fCI34R9huUvIsYw",
+      "location" : "Wilson Courts",
+      "numParticipants" : 4,
+      "owner" : "LsyfxKqPQoRA1BMKaKxGE4Fp4O33",
+      "participants" : {
+        "FiiKe71Bk3PYNbFa50mUpFCcPt33" : "false",
+        "LsyfxKqPQoRA1BMKaKxGE4Fp4O33" : "false",
+        "kFTTrJb8bJcTUduhviknpnopB8A2" : "false"
+      },
+      "rating" : 2,
+      "sport" : "Tennis",
+      "time" : "16:30"
+    },
+    "-LBI_oZBDmSIjE7BPUl7" : {
+      "date" : "2018-05-05",
+      "dateCreated" : 1525042070115,
+      "duration" : "2",
+      "gameID" : "-LBI_oZBDmSIjE7BPUl7",
+      "location" : "Brodie Courts",
+      "numParticipants" : 4,
+      "owner" : "LsyfxKqPQoRA1BMKaKxGE4Fp4O33",
+      "participants" : {
+        "LsyfxKqPQoRA1BMKaKxGE4Fp4O33" : "false",
+        "kFTTrJb8bJcTUduhviknpnopB8A2" : "false"
+      },
+      "rating" : 2,
+      "sport" : "Tennis",
+      "time" : "16:30"
+    },
+    "-LBIa9RtjKx11vPGzNqH" : {
+      "date" : "2018-05-03",
+      "dateCreated" : 1525042159735,
+      "duration" : "2",
+      "gameID" : "-LBIa9RtjKx11vPGzNqH",
+      "location" : "Wilson",
+      "numParticipants" : 4,
+      "owner" : "FiiKe71Bk3PYNbFa50mUpFCcPt33",
+      "participants" : {
+        "FiiKe71Bk3PYNbFa50mUpFCcPt33" : "false",
+        "kFTTrJb8bJcTUduhviknpnopB8A2" : "false"
+      },
+      "rating" : 5,
+      "sport" : "Tennis",
+      "time" : "14:30"
+    },
+    "-LBIbJrmdZ0CFCaeh0T3" : {
+      "date" : "2018-05-02",
+      "dateCreated" : 1525042464583,
+      "duration" : "2.5",
+      "gameID" : "-LBIbJrmdZ0CFCaeh0T3",
+      "location" : "Gym",
+      "numParticipants" : 3,
+      "owner" : "uXmyjoTT1obpLaEf0XPZcVnOeV02",
+      "participants" : {
+        "uXmyjoTT1obpLaEf0XPZcVnOeV02" : "false"
+      },
+      "rating" : 0,
+      "sport" : "Squash",
+      "time" : "18:00"
+    },
+    "-LBIbQlN8HNNsBiLLsiE" : {
+      "date" : "2018-05-09",
+      "dateCreated" : 1525042492843,
+      "duration" : "2",
+      "gameID" : "-LBIbQlN8HNNsBiLLsiE",
+      "location" : "Wilson",
+      "numParticipants" : 4,
+      "owner" : "uXmyjoTT1obpLaEf0XPZcVnOeV02",
+      "participants" : {
+        "uXmyjoTT1obpLaEf0XPZcVnOeV02" : "false"
+      },
+      "rating" : 0,
+      "sport" : "Squash",
+      "time" : "18:30"
+    },
+    "-LBIqI-2J-ymHFgou-wv" : {
+      "date" : "2018-05-23",
+      "dateCreated" : 1525046389020,
+      "duration" : "1.5",
+      "gameID" : "-LBIqI-2J-ymHFgou-wv",
+      "location" : "Brodie",
+      "numParticipants" : 4,
+      "owner" : "rYnfTemLYhhNQZAnoJnaWDVKsN93",
+      "participants" : {
+        "kFTTrJb8bJcTUduhviknpnopB8A2" : "false",
+        "rYnfTemLYhhNQZAnoJnaWDVKsN93" : "false"
+      },
+      "rating" : 4,
+      "sport" : "Tennis",
+      "time" : "20:00"
+    },
+    "-LBIqi-mSqWBkCXLbYj4" : {
+      "date" : "2018-05-10",
+      "dateCreated" : 1525046499729,
+      "duration" : "2",
+      "gameID" : "-LBIqi-mSqWBkCXLbYj4",
+      "location" : "Indoor courts",
+      "numParticipants" : 5,
+      "owner" : "rYnfTemLYhhNQZAnoJnaWDVKsN93",
+      "participants" : {
+        "rYnfTemLYhhNQZAnoJnaWDVKsN93" : "false"
+      },
+      "rating" : 2,
+      "sport" : "Squash",
+      "time" : "19:30"
+    },
+    "-LBIySMQcgTcRMVe6QoG" : {
+      "date" : "2018-04-30",
+      "dateCreated" : 1525048528698,
+      "duration" : "4",
+      "gameID" : "-LBIySMQcgTcRMVe6QoG",
+      "location" : "Wilson Courts",
+      "numParticipants" : 2,
+      "owner" : "9tH9cby4HHNrWd7HabIcYQGGIKE3",
+      "participants" : {
+        "9tH9cby4HHNrWd7HabIcYQGGIKE3" : "false"
+      },
+      "rating" : 4,
+      "sport" : "Badminton",
+      "time" : "00:33"
+    },
+    "-LBJezrN2aRIQIKZ6339" : {
+      "date" : "2018-04-29",
+      "dateCreated" : 1525060204419,
+      "duration" : "1.5",
+      "gameID" : "-LBJezrN2aRIQIKZ6339",
+      "location" : "here",
+      "numParticipants" : 2,
+      "owner" : "du24mffSDAeROBeeymif31JZzwd2",
+      "participants" : {
+        "du24mffSDAeROBeeymif31JZzwd2" : "false"
+      },
+      "rating" : 0,
+      "sport" : "Tennis",
+      "time" : "04:00"
+    },
+    "-LBMLOEGfCtyV3hLRJuc" : {
+      "date" : "2009-09-05",
+      "dateCreated" : 1525105136564,
+      "duration" : "1",
+      "gameID" : "-LBMLOEGfCtyV3hLRJuc",
+      "location" : "brodie",
+      "numParticipants" : 4,
+      "owner" : "kFTTrJb8bJcTUduhviknpnopB8A2",
+      "participants" : {
+        "kFTTrJb8bJcTUduhviknpnopB8A2" : "false"
+      },
+      "rating" : 5,
+      "sport" : "Tennis",
+      "time" : "12:23"
+    }
+  },
+  "users" : {
+    "1W0f7rLp7GdsGDJK4BbIoB9OmZW2" : {
+      "email" : "lmnop@yahoo.com",
+      "ratings" : {
+        "Tennis" : 3
+      },
+      "type" : "consumer",
+      "username" : "Joshua Librarian"
+    },
+    "3r0DaHaL4cgdW7CJZeLNeGMkegC3" : {
+      "email" : "mrpoopy@iubw.com",
+      "type" : "consumer",
+      "username" : "wrviyhv"
+    },
+    "4QK979w65LbItRHrwbL0IqZr8042" : {
+      "email" : "poopy@poopy.com",
+      "type" : "consumer",
+      "username" : "jhgfcrg tyvrc"
+    },
+    "9tH9cby4HHNrWd7HabIcYQGGIKE3" : {
+      "email" : "pmt@hjh.co",
+      "games" : {
+        "-LBHxqLwYqbNxApJy_aB" : "-LBHxqLwYqbNxApJy_aB",
+        "-LBIySMQcgTcRMVe6QoG" : "-LBIySMQcgTcRMVe6QoG"
+      },
+      "ratings" : {
+        "Badminton" : 4
+      },
+      "type" : "consumer",
+      "username" : "patsy"
+    },
+    "FiiKe71Bk3PYNbFa50mUpFCcPt33" : {
+      "email" : "test2@test.com",
+      "games" : {
+        "-LBI_fCI34R9huUvIsYw" : "-LBI_fCI34R9huUvIsYw",
+        "-LBIa9RtjKx11vPGzNqH" : "-LBIa9RtjKx11vPGzNqH"
+      },
+      "ratings" : {
+        "Tennis" : 5
+      },
+      "type" : "consumer",
+      "username" : "My Test 2"
+    },
+    "LsyfxKqPQoRA1BMKaKxGE4Fp4O33" : {
+      "email" : "test@test.com",
+      "games" : {
+        "-LBI_fCI34R9huUvIsYw" : "-LBI_fCI34R9huUvIsYw",
+        "-LBI_oZBDmSIjE7BPUl7" : "-LBI_oZBDmSIjE7BPUl7"
+      },
+      "ratings" : {
+        "Tennis" : 2
+      },
+      "type" : "consumer",
+      "username" : "My Test"
+    },
+    "Nk8UKHOsn3Tj3BN2fdnBbNlxzbZ2" : {
+      "email" : "seegouttham@gmail.com",
+      "ratings" : {
+        "Badminton" : 19,
+        "Squash" : 10,
+        "Tennis" : 6
+      },
+      "type" : "consumer",
+      "username" : "Gouttham Chandrasekar"
+    },
+    "aSaQlfwsXUcZADeBBHSUA02lCmE2" : {
+      "email" : "mamsm@maman.mma",
+      "type" : "consumer",
+      "username" : "werjv vwrui"
+    },
+    "du24mffSDAeROBeeymif31JZzwd2" : {
+      "email" : "blahblahblah@blahblahblah.edu",
+      "games" : {
+        "-LBJezrN2aRIQIKZ6339" : "-LBJezrN2aRIQIKZ6339"
+      },
+      "ratings" : {
+        "Tennis" : 0
+      },
+      "type" : "consumer",
+      "username" : "kait boncaro"
+    },
+    "kFTTrJb8bJcTUduhviknpnopB8A2" : {
+      "email" : "brookesimmonds01@gmail.com",
+      "games" : {
+        "-LBHrcy3YcHZ5S6N0ce0" : "-LBHrcy3YcHZ5S6N0ce0",
+        "-LBIOvTwba3FaUxSXwyl" : "-LBIOvTwba3FaUxSXwyl",
+        "-LBI_fCI34R9huUvIsYw" : "-LBI_fCI34R9huUvIsYw",
+        "-LBI_oZBDmSIjE7BPUl7" : "-LBI_oZBDmSIjE7BPUl7",
+        "-LBIa9RtjKx11vPGzNqH" : "-LBIa9RtjKx11vPGzNqH",
+        "-LBIqI-2J-ymHFgou-wv" : "-LBIqI-2J-ymHFgou-wv",
+        "-LBMLOEGfCtyV3hLRJuc" : "-LBMLOEGfCtyV3hLRJuc"
+      },
+      "ratings" : {
+        "Tennis" : 5
+      },
+      "type" : "consumer",
+      "username" : "Brooke Simmonds"
+    },
+    "null" : {
+      "ratings" : 1
+    },
+    "rXshDS35S3QEnwUDBKAQq36rOBL2" : {
+      "email" : "cgouttham@gmail.com",
+      "games" : {
+        "-LB9GwMHu2S6xPSQBHYC" : "-LB9GwMHu2S6xPSQBHYC",
+        "-LB9JBH50MBM1Vp293Hl" : "-LB9JBH50MBM1Vp293Hl",
+        "-LBFBWOYnBVwp7zhsTOy" : "-LBFBWOYnBVwp7zhsTOy"
+      },
+      "ratings" : {
+        "Badminton" : 8,
+        "Squash" : 10,
+        "Tennis" : 6
+      },
+      "type" : "consumer",
+      "username" : "Gouttham Chandrasekar"
+    },
+    "rYnfTemLYhhNQZAnoJnaWDVKsN93" : {
+      "email" : "test3@test.com",
+      "games" : {
+        "-LBFBWOYnBVwp7zhsTOy" : "-LBFBWOYnBVwp7zhsTOy",
+        "-LBHxqLwYqbNxApJy_aB" : "-LBHxqLwYqbNxApJy_aB",
+        "-LBIHZd612NEny5U36J5" : "-LBIHZd612NEny5U36J5",
+        "-LBIZXAuyv8IQ2vfzGBq" : "-LBIZXAuyv8IQ2vfzGBq",
+        "-LBIqI-2J-ymHFgou-wv" : "-LBIqI-2J-ymHFgou-wv",
+        "-LBIqi-mSqWBkCXLbYj4" : "-LBIqi-mSqWBkCXLbYj4"
+      },
+      "ratings" : {
+        "Badminton" : 6,
+        "Squash" : 2,
+        "Tennis" : 4
+      },
+      "type" : "consumer",
+      "username" : "Test 3"
+    },
+    "tDcNlYE2fjMyrjsGqgClB97VPrk1" : {
+      "email" : "nuytv@234.ccc",
+      "ratings" : {
+        "Badminton" : 7
+      },
+      "type" : "consumer",
+      "username" : "123q bdb"
+    },
+    "tMf3n3D1qHcWd1R7ZTn5B1wwEzn2" : {
+      "email" : "martinmartin@gmail.com",
+      "type" : "consumer",
+      "username" : "Martin2"
+    },
+    "uXmyjoTT1obpLaEf0XPZcVnOeV02" : {
+      "email" : "mm617@duke.edu",
+      "games" : {
+        "-LBHrcy3YcHZ5S6N0ce0" : "-LBHrcy3YcHZ5S6N0ce0",
+        "-LBHxqLwYqbNxApJy_aB" : "-LBHxqLwYqbNxApJy_aB",
+        "-LBIHZd612NEny5U36J5" : "-LBIHZd612NEny5U36J5",
+        "-LBIJInNe3VwOq8LHx4e" : "-LBIJInNe3VwOq8LHx4e",
+        "-LBIOvTwba3FaUxSXwyl" : "-LBIOvTwba3FaUxSXwyl",
+        "-LBIZXAuyv8IQ2vfzGBq" : "-LBIZXAuyv8IQ2vfzGBq",
+        "-LBIbJrmdZ0CFCaeh0T3" : "-LBIbJrmdZ0CFCaeh0T3",
+        "-LBIbQlN8HNNsBiLLsiE" : "-LBIbQlN8HNNsBiLLsiE"
+      },
+      "ratings" : {
+        "Badminton" : 2,
+        "Squash" : 0,
+        "Tennis" : 7
+      },
+      "type" : "consumer",
+      "username" : "Martin Muenster"
+    },
+    "x8VeiyPWKsddz8YcQxrY7OoIB8P2" : {
+      "email" : "admin@gmail.com",
+      "ratings" : {
+        "Tennis" : 7
+      },
+      "type" : "admin",
+      "username" : "ADMIN"
+    },
+    "yNNP7K3p7EVLut3KFXi99XdvQKY2" : {
+      "email" : "imanadmin@admin.com",
+      "type" : "consumer",
+      "username" : "ADMIN"
+    }
+  }
+}
