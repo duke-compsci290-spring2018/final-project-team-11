@@ -1,0 +1,31 @@
+We created a google form to survey the usability of our website.
+On this survey, we asked the user to do specific actions (without telling them how to do it) and describe the process of performing this action.
+
+We had three questions:
+1. Sign up for Athena. (you can use fake email/name). Describe the experience/usability of signing in:
+2. Choose a sport and take a survey. Describe the usability of this feature.
+3. Create a new game or join an existing game, View your games, and if applicable, take the post-game survey. Describe the usability of this feature.
+4. If you have any other comments, please elaborate. (optional)
+
+We surveyed three people. Their responses are as follows:
+
+Name: Natasha Torrens
+Date: 4/29/18
+1. it was difficult to click on things and hard to figure out how to make an account
+2. tennis: good survey, easy to navigate drop down menus
+3. I joined a tennis game. Very easy to join. Wouldn't let me leave the game. (fixed)
+
+Name: Patricia Torvalds
+Date: 4/29/18
+1. It was amazing very intuitive
+2. Very usable, I felt good about this
+3. Very fun felt like I was ready to play
+4. I am excited to use this app whenever I want to play Badminton which is often
+
+Name: Kaitlyn Boncaro
+Date: 4/29/2018
+1. the path to the sign up page was very circuitous
+2. Tennis - it was usable
+3. it was easier than everything else. except the time
+
+the responses to the survey are also linked here-- https://docs.google.com/spreadsheets/d/1bcJj78nSW3YCa-NXA34ueV7bGPIlBssoX_hiD1Yc4rw/edit?usp=sharing
