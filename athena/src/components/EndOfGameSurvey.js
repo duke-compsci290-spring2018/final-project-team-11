@@ -22,7 +22,6 @@ export default class EndOfGameSurvey extends Component {
 
     handleInputChange(event) {
         const target = event.target;
-        console.log(event.target);
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
 
@@ -32,7 +31,6 @@ export default class EndOfGameSurvey extends Component {
     }
 
     handleSubmit(event) {
-        console.log(this.state);
         //var rating = parseInt(this.state.experience, 10) + parseInt(this.state.frequency, 10);
         db.addToRating(this.props.userID, this.props.surveySport, parseInt(this.state.experience, 10));
         db.surveyTaken(this.props.userID, this.props.gameID);

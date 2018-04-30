@@ -73,22 +73,23 @@ export const removeGame = (gameID) => {
 export const joinGame = (gameID, userID, dateJoined) => {
     db.ref(`games/${gameID}/participants/${userID}`).set('false');
     db.ref(`users/${userID}/games/${gameID}`).set(gameID);
+    console.log("joined game!")
 }
 
 export const leaveGame = (gameID, userID) => {
-    //db.ref(`games/${gameID}/participants/${userID}`).remove();
+    db.ref(`games/${gameID}/participants/${userID}`).remove();
+    console.log("game left!")
     db.ref(`games`).once('value').then(snap => {
         var games = snap.val();
-        delete games[gameID].participants[userID];
-        console.log(games[gameID].participants);
-        if (Object.keys(games[gameID].participants).length === 0) {
+        //delete games[gameID].participants[userID];
+        if (games[gameID].participants === undefined) {
+            console.log("no more participants! Game removed...")
             delete games[gameID];
         }
         db.ref("games").set(games);
     });
 
     db.ref(`users/${userID}/games/${gameID}`).remove();
-    console.log("game left!")
 }
 
 export const hasPlayed = (userID, sport) => {
@@ -98,11 +99,8 @@ export const hasPlayed = (userID, sport) => {
         if (user.ratings === undefined || user.ratings[sport] === undefined) {
             hasPlayed = false;
         }
-        console.log(hasPlayed);
         return hasPlayed;
     });
-    //console.log(hasPlayed);
-    //return hasPlayed;
 }
 
 export const getUserInfo = (userID) => {
@@ -129,8 +127,6 @@ export const addToRating = (userID, sport, add) => {
     db.ref(`users/${userID}`).once('value').then(snap => {
         var user = snap.val();
         var rating = user.ratings[sport];
-        console.log(sport);
-        console.log(add);
         db.ref(`users/${userID}/ratings/${sport}`).set(rating+add);
     });
 }

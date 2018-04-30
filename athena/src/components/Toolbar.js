@@ -68,7 +68,7 @@ class ToolbarAfterSignIn extends React.Component {
                             : <RaisedButton><Link style={{textDecoration: 'none'}}  to={routes.SIGN_IN}>Choose Different Sport</Link></RaisedButton>
                         }
                         <RaisedButton><Link style={{textDecoration: 'none'}}  to={routes.HOME}>Home</Link></RaisedButton>
-                        <RaisedButton ><Link style={{textDecoration: 'none'}}  to={routes.HOME} onClick={() => {console.log(this.props.username); this.props.signOut(); auth.signOut();}}>Sign Out</Link></RaisedButton>
+                        <RaisedButton ><Link style={{textDecoration: 'none'}}  to={routes.HOME} onClick={() => {this.props.signOut(); auth.signOut();}}>Sign Out</Link></RaisedButton>
 
                     </ToolbarGroup>
                 </Toolbar>

@@ -36,7 +36,6 @@ export default class SportChooser extends React.Component {
 
     doSport(sport, rating) {
         this.props.sportCallBack(sport);
-        console.log(sport);
         this.setState({sport: sport});
         //<Redirect to={routes.GAME_SIGN_UP}/>
     }

@@ -34,7 +34,6 @@ class App extends React.Component {
 
     signInCallBack(signInInfo) {
         this.setState({user: {name: signInInfo.displayName, id: signInInfo.uid}});
-        console.log(signInInfo);
     }
 
     signOutCallBack() {
@@ -42,7 +41,6 @@ class App extends React.Component {
     }
 
     sportCallBack(sport) {
-        console.log(sport);
         this.setState({sport: sport});
     }
 

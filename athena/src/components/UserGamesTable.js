@@ -83,7 +83,6 @@ export default class UserGamesTable extends Component {
             var pastGames = [];
             var data = snap.val();
             var now = new Date();
-            console.log(data);
             if (data.users[self.props.userID] !== undefined && data.users[self.props.userID].games !== undefined) {
                 var userGames = Object.values(data.users[self.props.userID].games);
                 for (var userGame of userGames) {

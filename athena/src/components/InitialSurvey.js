@@ -24,7 +24,6 @@ export default class InitialSportSurvey extends Component {
 
     handleInputChange(event) {
         const target = event.target;
-        console.log(event.target);
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
 
@@ -34,7 +33,6 @@ export default class InitialSportSurvey extends Component {
     }
 
     handleSubmit(event) {
-        console.log(this.state);
         var rating = parseInt(this.state.experience, 10) + parseInt(this.state.frequency, 10);
         db.setRating(this.props.userID, this.props.sport, rating);
         this.setState({submit: true});
@@ -78,7 +76,7 @@ export default class InitialSportSurvey extends Component {
                         <label>
                             <CardText> 2. How many times do you play per week on average? </CardText>
                             <br />
-                            <input name="frequency" checked={this.state.frequency} onChange={this.handleInputChange} type="number" required/>
+                            <input name="frequency" checked={this.state.frequency} onChange={this.handleInputChange} type="number" min="0" max="7" step="1" required/>
                         </label>
                         <br />
                         <input type="submit" value="Submit"/>
